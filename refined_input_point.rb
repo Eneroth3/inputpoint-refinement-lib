@@ -10,10 +10,21 @@ module RefinedInputPoint
     def freedom_constraint
       case degrees_of_freedom
       when 1
-        # TODO: Support constraint to drawing axis.
-        source_edge && edge.line[1].transform(transformation)
+        return edge.line[1].transform(transformation) if source_edge
+        axis
       when 2
         source_face && transform_as_normal(face.normal, transformation)
+      end
+    end
+
+    # Model axis input point is positioned at.
+    #
+    # @return [Geom::Vector3d]
+    def axis
+      axes = Sketchup.active_model.axes
+
+      axes.axes.find do |axis|
+        position.on_line?([axes.origin, axis])
       end
     end
 
