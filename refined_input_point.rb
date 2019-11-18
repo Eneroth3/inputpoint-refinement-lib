@@ -1,7 +1,9 @@
+# Add functionality for SketchUp InputPoint.
 module RefinedInputPoint
   refine Sketchup::InputPoint do
-    # Get constraint direction or normal. When InputPoint gets its position from
-    # a point or free space there is no relevant constraint and nil is returned.
+    # Get axial constraint direction or planar constraint normal.
+    # When InputPoint gets its position from a point or free space there is no
+    # relevant constraint and nil is returned.
     #
     # Use `#degrees_of_freedom` to see if returned vector resembles a direction
     # or a normal.
@@ -31,7 +33,7 @@ module RefinedInputPoint
     # Edge the InputPoint is getting its position from.
     #
     # It is unknown to me if native #edge is always the edge InputPoint is on,
-    # or can also be in the background.
+    # or can also be in the background, similar to #face.
     #
     # @return [Sketchup::Edge, nil]
     def source_edge
