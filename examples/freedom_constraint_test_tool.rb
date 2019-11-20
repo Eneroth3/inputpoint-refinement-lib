@@ -1,4 +1,7 @@
+require_relative("../lib/refined_input_point")
+
 # Example/test tool for InputPoint#freedom_constraint.
+#
 # Draws a line communicating axial constraint or circle communicating planar
 # constraint.
 class FreedomConstraintTestTool
