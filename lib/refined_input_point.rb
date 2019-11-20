@@ -19,7 +19,7 @@ module RefinedInputPoint
       end
     end
 
-    # Model axis input point is getting its position from
+    # Model axis input point is getting its position from.
     #
     # @return [Geom::Vector3d, nil]
     def axis
