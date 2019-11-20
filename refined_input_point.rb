@@ -21,7 +21,7 @@ module RefinedInputPoint
 
     # Model axis input point is positioned at.
     #
-    # @return [Geom::Vector3d]
+    # @return [Geom::Vector3d, nil]
     def axis
       axes = Sketchup.active_model.axes
 
